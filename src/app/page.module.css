@@ -165,3 +165,12 @@ a.secondary {
     filter: invert();
   }
 }
+
+.personal{
+  flex: 1;
+
+}
+
+.professional{
+  flex: 1;
+}
