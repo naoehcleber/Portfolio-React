@@ -2,13 +2,17 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import NavBar from "./components/navBar";
+
+
 
 export default function Home() {
   return (
-    <div className="main">
+    <div className="main">  
+      <NavBar />
       <div className={styles.personal}>
       {/* foto + pequena descrição */}
-      <Image src="/placeholder.png" width={300} height={300} alt="João Victor Rocha Fernandes"></Image>
+      <Image src={"/images/placeholder.png"} width={300} height={300} alt="João Victor Rocha Fernandes"></Image>
       <h1>João Victor Rocha Fernandes</h1>
       <p>Estudante de ciência da computação na UNICAP. Desenvolvedor Fullstack. Interesse em Redes de computadores, DevOps e Infraestrutura.</p>
       <Link href={"https://github.com/naoehcleber"}> <FaGithub /> </Link>
