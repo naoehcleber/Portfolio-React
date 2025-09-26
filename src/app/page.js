@@ -1,19 +1,15 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { headers } from "next/headers";
 import styles from "./main.module.css";
 import NavBar from "./components/navBar";
+import Projects from "./components/projects";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
-import { ApolloClient, HttpLink, InMemoryCache, gql } from "@apollo/client";
-import { ApolloProvider } from "@apollo/client/react";
+
 
 import VantaBackground from "./components/vantaBackground";
 
-const client = new ApolloClient({
-  link: new HttpLink ({ uri: "https://api.github.com/graphql"}),
-  cache: new InMemoryCache(),
-});
+
 
 export default function Home() {
 
@@ -45,7 +41,7 @@ export default function Home() {
             Docker
           </p>
           <h2>Projetos</h2>
-          
+            <Projects />
         </div>
       </div>
     </>
