@@ -1,9 +1,8 @@
 "use client"
 import { useEffect, useState } from "react";
+import styles from "./page.module.css";
+import Button from "react-bootstrap/Button"
 import NavBar from "../components/navBar";
-
-
-
 
 const Game = () => {
 
@@ -49,6 +48,7 @@ const Game = () => {
     const [received, setReceived] = useState("");
     const [tentativas, setTentativas] = useState(7);
     const [mensagem, setMensagem] = useState("");
+    const [erros, setErros] = useState([])
 
        
 
@@ -65,6 +65,13 @@ const Game = () => {
         setDisplay(novoDisplay);
         if(!result){
             setTentativas(t => t-1);
+            //adicionar ao array erro a letra que não está certa
+            setErros((prev) => {
+                if (!prev.includes(input)) {
+                    return [...prev, input];
+                }
+                return prev;
+            });
         }
         setReceived("");
     }
@@ -88,7 +95,8 @@ const Game = () => {
         setDisplay(Array(novaPalavra.length).fill("_"));
         setTentativas(7);
         setMensagem("");
-        setReceives("");
+        setReceived("");
+        setErros([]);
     }
     
 
@@ -100,7 +108,8 @@ const Game = () => {
             <p> {display.join(" ")} </p>
             <input type="text" placeholder="Digite uma letra" value={received} maxLength={1} onChange={(e) => setReceived(e.target.value)}/>
             <button onClick={() => updateState(received)} >Enviar</button>
-            <p>tentativas : {tentativas} </p>
+            <p>Tentativas : {tentativas} </p>
+            <p>Erros:  {erros.join(" ")}</p>
             <button onClick={() => resetGame()}>Reiniciar</button>
         </div>
     );
