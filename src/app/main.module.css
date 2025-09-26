@@ -29,6 +29,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: sticky;
+    top: 0;
     width: 50vw;
     padding: 1rem;
     margin: 10px;

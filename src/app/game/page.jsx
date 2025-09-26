@@ -101,7 +101,7 @@ const Game = () => {
     
 
     return(
-        <div>
+        <div className={styles.main}>
             <NavBar />
             <h1> Jogo da Forca </h1>
             <h3>{mensagem}</h3>

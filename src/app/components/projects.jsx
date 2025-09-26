@@ -28,7 +28,7 @@ const Projects = () => {
             
                 <Card style={{ width: '18rem' }}>
                 <div className={styles.card}>
-                <Card.Img variant="top" src={"/images/placeholder.png"} style={{width: "200px" , height: "100px"}}/>
+                <Card.Img variant="top" src={"/images/pokebolsa.png"} style={{width: "200px" , height: "100px"}}/>
                     <Card.Body>
                         <Card.Title>
                         PokeBolsa
@@ -46,7 +46,7 @@ const Projects = () => {
             
                 <Card style={{ width: '18rem' }}>
                     <div className={styles.card}>
-                <Card.Img variant="top" src={"/images/placeholder.png"} style={{width: "200px" , height: "100px"}}/>
+                <Card.Img variant="top" src={"/images/forum.png"} style={{width: "200px" , height: "100px"}}/>
                     <Card.Body>
                         <Card.Title>
                         Fórum
