@@ -1,32 +1,35 @@
 "use client"
 import Image from "next/image";
-import styles from "./main.module.css";
-
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { headers } from "next/headers";
+import styles from "./main.module.css";
 import NavBar from "./components/navBar";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { ApolloClient, HttpLink, InMemoryCache, gql } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
+
 import VantaBackground from "./components/vantaBackground";
 
-
-
+const client = new ApolloClient({
+  link: new HttpLink ({ uri: "https://api.github.com/graphql"}),
+  cache: new InMemoryCache(),
+});
 
 export default function Home() {
-
 
   return (
     <>
       <NavBar />
       <div className={styles.main}>  
-        <div className={styles.bg}>
-          <VantaBackground />  
-        </div>
         <div className={styles.personal}>
           {/* foto + pequena descrição */}
-          <Image src={"/images/placeholder.png"} width={300} height={300} alt="João Victor Rocha Fernandes"></Image>
+          <Image className={styles.pfp} src={"/images/pfp.png"} width={483} height={591} alt="João Victor Rocha Fernandes"></Image>
           <h1>João Victor Rocha Fernandes</h1>
           <p>Estudante de ciência da computação na UNICAP. Desenvolvedor Fullstack. Interesse em Redes de computadores, DevOps e Infraestrutura.</p>
-          <Link href={"https://github.com/naoehcleber"}> <FaGithub /> </Link>
-          <Link href={"https://www.linkedin.com/in/joão-victor-rocha-980a12290"}> <FaLinkedin /> </Link>
+          <ul>
+            <Link href={"https://github.com/naoehcleber"}> <FaGithub /> </Link>
+            <Link href={"https://www.linkedin.com/in/joão-victor-rocha-980a12290"}> <FaLinkedin /> </Link>
+          </ul>
         </div>
         <div className={styles.professional}>
           {/* curriculo profissional */}
@@ -39,9 +42,10 @@ export default function Home() {
             Linguagens de programação Python, JavaScript, Java, C/C++ <br />
             Banco de dados relacionais (MySQL, MariaDB, Postgres) e não relacionais (MongoDB) <br/>
             Framewoks React, Django, Express, SpringBoot <br/>
+            Docker
           </p>
-          <h2> Cursos </h2>
-          <p>Curso de desenvolvimento Front-End — Senac</p>
+          <h2>Projetos</h2>
+          
         </div>
       </div>
     </>
