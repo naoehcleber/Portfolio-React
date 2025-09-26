@@ -3,13 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Link from "next/link";
 import { CardGroup } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
-
+import styles from "./projects.module.css";
 const Projects = () => {
     return(
-        <Carousel>
-            <Carousel.Item>
-                <div className="d-flex justify-content-center">
+        <CardGroup>
+            
                 <Card style={{ width: '18rem' }}>
+                    <div className={styles.card}>
                     <Card.Img variant="top" src={"/images/pomodojo.png"} style={{width: "200px" , height: "100px"}}/>
                     <Card.Body>
                         <Card.Title>
@@ -22,12 +22,12 @@ const Projects = () => {
                         <Button>Ver</Button>
                         </Link>
                     </Card.Body>
+                    </div>
                 </Card>
-                </div>
-            </Carousel.Item>
-            <Carousel.Item>
-                <div className="d-flex justify-content-center">
+            
+            
                 <Card style={{ width: '18rem' }}>
+                <div className={styles.card}>
                 <Card.Img variant="top" src={"/images/placeholder.png"} style={{width: "200px" , height: "100px"}}/>
                     <Card.Body>
                         <Card.Title>
@@ -40,12 +40,12 @@ const Projects = () => {
                         <Button  >Ver</Button>
                         </Link>
                     </Card.Body>
+                    </div>
                 </Card>
-                </div>
-            </Carousel.Item>
-            <Carousel.Item>
-                <div className="d-flex justify-content-center">
+            
+            
                 <Card style={{ width: '18rem' }}>
+                    <div className={styles.card}>
                 <Card.Img variant="top" src={"/images/placeholder.png"} style={{width: "200px" , height: "100px"}}/>
                     <Card.Body>
                         <Card.Title>
@@ -58,10 +58,10 @@ const Projects = () => {
                         <Button  >Ver</Button>
                         </Link>
                     </Card.Body>
+                    </div>
                 </Card>
-                </div>
-            </Carousel.Item>
-        </Carousel>
+            
+        </CardGroup>
         
         
     );

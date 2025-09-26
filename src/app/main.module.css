@@ -31,6 +31,7 @@
     text-align: center;
     width: 50vw;
     padding: 1rem;
+    margin: 10px;
     box-sizing: border-box;
     background-color: rgb(93, 92, 94);
 }
@@ -48,7 +49,10 @@
     display: flex;
     flex-direction: column;    /* elementos internos em fila (linha) */
     flex-grow: 1;
+    margin: 10px;
     padding: 1rem;
     box-sizing: border-box;
+    background-color: rgb(93, 92, 94);
+
 
 }

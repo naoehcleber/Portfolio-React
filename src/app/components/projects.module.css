@@ -1,0 +1,9 @@
+.card{
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    background-color: rgb(8, 86, 104);
+    border-radius: 2%;
+    margin: 10px;
+    border: 2px solid #ffffff; /* linha branca em volta */
+}
