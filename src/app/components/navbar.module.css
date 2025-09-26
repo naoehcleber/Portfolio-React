@@ -1,0 +1,27 @@
+.navbar {
+  background-color: #111;
+  padding: 1rem 2rem;
+}
+
+.navList {
+  display: flex;              /* coloca os itens na horizontal */
+  list-style: none;           /* remove bullets */
+  gap: 2rem;                  /* espaço entre os itens */
+  margin: 0;
+  padding: 0;
+}
+
+.navList li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.navList li a:hover {
+  color: #00e6ff;
+  text-shadow: 0 0 8px #00e6ff, 0 0 16px #00e6ff, 0 0 24px #00e6ff;
+  background-color: rgba(0, 230, 255, 0.1);
+}

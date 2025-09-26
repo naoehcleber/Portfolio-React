@@ -1,8 +1,9 @@
 import Link from "next/link"
+import styles from "./navbar.module.css"
 const NavBar = () => {
     return (
-        <div>
-            <ul>
+        <div className={styles.navbar}>
+            <ul className={styles.navList}>
                 <li>
                     <Link href={"/"}> Home </Link>
                 </li>
